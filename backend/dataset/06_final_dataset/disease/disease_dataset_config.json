@@ -1,0 +1,112 @@
+{
+  "dataset_name": "Smart Polyhouse Disease Detection Dataset",
+  "dataset_version": "1.0",
+  "task_type": "image_classification",
+  "description": "Authentic plant disease image dataset prepared for Smart Polyhouse disease detection model training.",
+
+  "dataset_root": ".",
+
+  "target_column": "final_class",
+  "image_path_column": "relative_image_path",
+
+  "total_images": 56501,
+  "total_classes": 38,
+  "total_crops": 14,
+
+  "splits": {
+    "train": {
+      "manifest": "05_metadata/disease_train_manifest.csv",
+      "images": 39550,
+      "percentage": 70
+    },
+    "validation": {
+      "manifest": "05_metadata/disease_validation_manifest.csv",
+      "images": 8475,
+      "percentage": 15
+    },
+    "test": {
+      "manifest": "05_metadata/disease_test_manifest.csv",
+      "images": 8476,
+      "percentage": 15
+    }
+  },
+
+  "canonical_manifest": "05_metadata/disease_canonical_manifest.csv",
+
+  "class_mapping": "05_metadata/disease_class_mapping.csv",
+
+  "random_seed": 42,
+
+  "split_strategy": "Stratified split by final_class with duplicate SHA-256 leakage protection",
+
+  "file_integrity": {
+    "status": "PASSED",
+    "total_records_checked": 56501,
+    "missing_files": 0
+  },
+
+  "data_sources": [
+    {
+      "name": "PlantVillage Color",
+      "records_before_duplicate_cleanup": 54238
+    },
+    {
+      "name": "PlantDoc",
+      "records_before_duplicate_cleanup": 2296
+    }
+  ],
+
+  "training_rules": {
+    "train_only_on_train_split": true,
+    "validation_only_for_model_selection": true,
+    "test_only_for_final_evaluation": true,
+    "allow_split_regeneration": false,
+    "allow_external_dataset_addition": false,
+    "allow_synthetic_data_generation": false,
+    "preserve_final_class_labels": true,
+    "preserve_dataset_provenance": true
+  },
+
+  "classes": [
+    "Apple___Apple_scab",
+    "Apple___Black_rot",
+    "Apple___Cedar_apple_rust",
+    "Apple___healthy",
+    "Bell_pepper___Bacterial_spot",
+    "Bell_pepper___healthy",
+    "Blueberry___healthy",
+    "Cherry___Powdery_mildew",
+    "Cherry___healthy",
+    "Corn___Common_rust",
+    "Corn___Gray_leaf_spot",
+    "Corn___Northern_Leaf_Blight",
+    "Corn___healthy",
+    "Grape___Black_rot",
+    "Grape___Esca_Black_Measles",
+    "Grape___Leaf_blight",
+    "Grape___healthy",
+    "Orange___Citrus_greening",
+    "Peach___Bacterial_spot",
+    "Peach___healthy",
+    "Potato___Early_blight",
+    "Potato___Late_blight",
+    "Potato___healthy",
+    "Raspberry___healthy",
+    "Soybean___healthy",
+    "Squash___Powdery_mildew",
+    "Strawberry___Leaf_scorch",
+    "Strawberry___healthy",
+    "Tomato___Bacterial_spot",
+    "Tomato___Early_blight",
+    "Tomato___Late_blight",
+    "Tomato___Leaf_Mold",
+    "Tomato___Septoria_leaf_spot",
+    "Tomato___Target_Spot",
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "Tomato___Tomato_mosaic_virus",
+    "Tomato___Two_spotted_spider_mite",
+    "Tomato___healthy"
+  ],
+
+  "final_instruction": "This dataset package is authoritative for disease detection model training. Do not fabricate, substitute, silently modify, supplement, or regenerate the provided authentic dataset."
+}

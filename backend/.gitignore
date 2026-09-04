@@ -1,0 +1,54 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Distribution
+build/
+dist/
+*.egg
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Database
+*.sqlite3
+*.db
+
+# Model training artifacts (large binaries) - keep small metadata, exclude huge weights if needed
+ml_models/**/*.tmp
+ml_models/**/checkpoint_epoch_*.pt
+
+# Datasets (raw images should not live inside the backend repo)
+dataset/06_final_dataset/disease/images/
+*.jpg
+*.jpeg
+*.png
+!docs/**/*.png
+
+# Secrets
+*.pem
+*.key
+secrets/

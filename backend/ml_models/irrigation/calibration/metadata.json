@@ -1,0 +1,52 @@
+{
+  "model_name": "irrigation_calibration",
+  "model_type": "hist_gradient_boosting_regressor",
+  "version": "1.0.0",
+  "task": "irrigation_calibration",
+  "target_column": "Volumetric_Moisture_Pct",
+  "feature_columns": [
+    "Raw_Capacitive_ADC",
+    "Sensor_Voltage_V",
+    "Sensor_Board_Temperature_C",
+    "Atm_Pressure_inHg",
+    "Atm_Temperature_C",
+    "Soil_Temperature_C",
+    "Hour",
+    "Day",
+    "Month",
+    "DayOfWeek",
+    "DayOfYear",
+    "Hour_sin",
+    "Hour_cos",
+    "Day_sin",
+    "Day_cos"
+  ],
+  "training_dataset": "06_final_dataset/irrigation/calibration/{train,validation,test}.csv",
+  "training_date": "2026-09-02T08:44:30.727330+00:00",
+  "random_seed": 42,
+  "dataset_sizes": {
+    "train": 14918,
+    "validation": 3196,
+    "test": 3198
+  },
+  "baseline_model": "linear_regression",
+  "baseline_validation_metrics": {
+    "mae": 2.04953,
+    "rmse": 2.26629,
+    "r2": -1.15631,
+    "n_samples": 3196
+  },
+  "validation_metrics": {
+    "mae": 0.4446,
+    "rmse": 0.54866,
+    "r2": 0.87362,
+    "n_samples": 3196
+  },
+  "test_metrics": {
+    "mae": 0.77582,
+    "rmse": 0.93244,
+    "r2": 0.80301,
+    "n_samples": 3198
+  },
+  "status": "trained"
+}

@@ -1,0 +1,126 @@
+{
+    "dataset_name": "Smart Polyhouse Irrigation ML Dataset",
+    "dataset_version": "1.0",
+    "source_dataset": "EcoIrrigate",
+    "source_location": "Kolkata, India",
+    "description": "Authentic IoT soil moisture dataset prepared for smart irrigation machine learning tasks including soil moisture sensor calibration and multi-horizon soil moisture forecasting.",
+
+    "raw_dataset": {
+        "file": "01_raw/irrigation/EcoIrrigate/New_Dataset/kolkata_unified_dataset.csv",
+        "total_records": 21312,
+        "farms": 2,
+        "farm_ids": [
+            "Kolkata_Farm_1",
+            "Kolkata_Farm_2"
+        ],
+        "sampling_interval_minutes": 15,
+        "time_range": {
+            "start": "2025-01-05 00:00:00",
+            "end": "2025-04-25 23:45:00"
+        }
+    },
+
+    "calibration_dataset": {
+        "purpose": "Predict calibrated volumetric soil moisture percentage from IoT sensor readings and environmental conditions.",
+        "processed_file": "03_processed/irrigation/soil_moisture_calibration_dataset.csv",
+        "total_records": 21312,
+
+        "target_variable": "Volumetric_Moisture_Pct",
+
+        "feature_columns": [
+            "Raw_Capacitive_ADC",
+            "Sensor_Voltage_V",
+            "Sensor_Board_Temperature_C",
+            "Atm_Pressure_inHg",
+            "Atm_Temperature_C",
+            "Soil_Temperature_C",
+            "Hour",
+            "Day",
+            "Month",
+            "DayOfWeek",
+            "DayOfYear",
+            "Hour_sin",
+            "Hour_cos",
+            "Day_sin",
+            "Day_cos"
+        ],
+
+        "splits": {
+            "strategy": "Chronological time-series split performed independently for each farm",
+            "train": {
+                "file": "05_metadata/irrigation_calibration_train.csv",
+                "records": 14918,
+                "percentage": 70
+            },
+            "validation": {
+                "file": "05_metadata/irrigation_calibration_validation.csv",
+                "records": 3196,
+                "percentage": 15
+            },
+            "test": {
+                "file": "05_metadata/irrigation_calibration_test.csv",
+                "records": 3198,
+                "percentage": 15
+            }
+        }
+    },
+
+    "forecasting_dataset": {
+        "purpose": "Predict future volumetric soil moisture at multiple forecasting horizons using current sensor, environmental, soil and temporal features.",
+        "processed_file": "03_processed/irrigation/soil_moisture_forecasting_dataset.csv",
+        "total_records": 21120,
+
+        "forecast_horizons": {
+            "1_hour": {
+                "target_column": "target_moisture_1h",
+                "steps_ahead": 4
+            },
+            "6_hours": {
+                "target_column": "target_moisture_6h",
+                "steps_ahead": 24
+            },
+            "12_hours": {
+                "target_column": "target_moisture_12h",
+                "steps_ahead": 48
+            },
+            "24_hours": {
+                "target_column": "target_moisture_24h",
+                "steps_ahead": 96
+            }
+        },
+
+        "splits": {
+            "strategy": "Chronological time-series split performed independently for each farm",
+            "train": {
+                "file": "05_metadata/irrigation_forecasting_train.csv",
+                "records": 14782
+            },
+            "validation": {
+                "file": "05_metadata/irrigation_forecasting_validation.csv",
+                "records": 3170
+            },
+            "test": {
+                "file": "05_metadata/irrigation_forecasting_test.csv",
+                "records": 3168
+            }
+        }
+    },
+
+    "data_quality": {
+        "missing_values": 0,
+        "duplicate_records": 0,
+        "duplicate_farm_timestamp_records": 0,
+        "cross_split_leakage": false,
+        "chronological_order_verified": true,
+        "continuous_15_minute_sampling_verified": true
+    },
+
+    "training_guidelines": {
+        "use_only_provided_authentic_dataset": true,
+        "do_not_generate_synthetic_training_records": true,
+        "do_not_randomly_shuffle_time_series_before_split": true,
+        "preserve_chronological_order": true,
+        "use_validation_set_for_model_selection": true,
+        "use_test_set_only_for_final_evaluation": true
+    }
+}

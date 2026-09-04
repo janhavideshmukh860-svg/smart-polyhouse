@@ -1,0 +1,22 @@
+[
+  "Volumetric_Moisture_Pct",
+  "Sensor_Board_Temperature_C",
+  "Raw_Capacitive_ADC",
+  "Sensor_Voltage_V",
+  "Atm_Pressure_inHg",
+  "Atm_Temperature_C",
+  "Soil_Temperature_C",
+  "SM_Level_15cm",
+  "SM_Volume_15cm",
+  "SM_Aggregate_Pct",
+  "SM_Volume_Pct",
+  "Hour",
+  "Day",
+  "Month",
+  "DayOfWeek",
+  "DayOfYear",
+  "Hour_sin",
+  "Hour_cos",
+  "Day_sin",
+  "Day_cos"
+]

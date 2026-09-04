@@ -1,0 +1,17 @@
+[
+  "Raw_Capacitive_ADC",
+  "Sensor_Voltage_V",
+  "Sensor_Board_Temperature_C",
+  "Atm_Pressure_inHg",
+  "Atm_Temperature_C",
+  "Soil_Temperature_C",
+  "Hour",
+  "Day",
+  "Month",
+  "DayOfWeek",
+  "DayOfYear",
+  "Hour_sin",
+  "Hour_cos",
+  "Day_sin",
+  "Day_cos"
+]

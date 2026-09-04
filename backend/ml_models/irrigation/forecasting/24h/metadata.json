@@ -1,0 +1,24 @@
+{
+  "horizon": "24h",
+  "steps_ahead": 96,
+  "target_column": "target_moisture_24h",
+  "baseline_model": "linear_regression",
+  "baseline_validation_metrics": {
+    "mae": 2.08692,
+    "rmse": 2.35901,
+    "r2": -1.30447,
+    "n_samples": 3170
+  },
+  "validation_metrics": {
+    "mae": 0.81592,
+    "rmse": 1.1559,
+    "r2": 0.44671,
+    "n_samples": 3170
+  },
+  "test_metrics": {
+    "mae": 2.23447,
+    "rmse": 2.75121,
+    "r2": -0.75704,
+    "n_samples": 3168
+  }
+}

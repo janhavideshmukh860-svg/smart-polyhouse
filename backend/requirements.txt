@@ -1,0 +1,43 @@
+# ===== Core Web Framework =====
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.19
+
+# ===== Validation / Config =====
+pydantic==2.10.4
+pydantic-settings==2.7.0
+
+# ===== Database =====
+sqlalchemy==2.0.36
+alembic==1.14.0
+psycopg2-binary==2.9.10
+
+# ===== Auth / Security =====
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+
+# ===== Data Processing =====
+pandas==2.2.3
+numpy==1.26.4
+
+# ===== Classical ML (irrigation calibration & forecasting) =====
+scikit-learn==1.5.2
+joblib==1.4.2
+
+# ===== Deep Learning (disease image classification) =====
+# CPU wheel index (falls back to default index if unavailable):
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1
+torchvision==0.20.1
+
+# ===== Images =====
+Pillow==11.0.0
+
+# ===== Utilities =====
+python-dotenv==1.0.1
+
+# ===== Testing =====
+pytest==8.3.4
+httpx==0.28.1
+email-validator==2.2.0

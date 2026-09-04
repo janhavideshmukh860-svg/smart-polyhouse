@@ -1,0 +1,135 @@
+{
+  "model_name": "irrigation_forecasting",
+  "model_type": "hist_gradient_boosting_regressor_per_horizon",
+  "version": "1.0.0",
+  "task": "irrigation_forecasting",
+  "feature_columns": [
+    "Volumetric_Moisture_Pct",
+    "Sensor_Board_Temperature_C",
+    "Raw_Capacitive_ADC",
+    "Sensor_Voltage_V",
+    "Atm_Pressure_inHg",
+    "Atm_Temperature_C",
+    "Soil_Temperature_C",
+    "SM_Level_15cm",
+    "SM_Volume_15cm",
+    "SM_Aggregate_Pct",
+    "SM_Volume_Pct",
+    "Hour",
+    "Day",
+    "Month",
+    "DayOfWeek",
+    "DayOfYear",
+    "Hour_sin",
+    "Hour_cos",
+    "Day_sin",
+    "Day_cos"
+  ],
+  "training_dataset": "06_final_dataset/irrigation/forecasting/{train,validation,test}.csv",
+  "training_date": "2026-09-02T08:44:34.186605+00:00",
+  "random_seed": 42,
+  "dataset_sizes": {
+    "train": 14782,
+    "validation": 3170,
+    "test": 3168
+  },
+  "horizons": {
+    "1h": {
+      "horizon": "1h",
+      "steps_ahead": 4,
+      "target_column": "target_moisture_1h",
+      "baseline_model": "linear_regression",
+      "baseline_validation_metrics": {
+        "mae": 0.09632,
+        "rmse": 0.26559,
+        "r2": 0.96965,
+        "n_samples": 3170
+      },
+      "validation_metrics": {
+        "mae": 0.14691,
+        "rmse": 0.30846,
+        "r2": 0.95907,
+        "n_samples": 3170
+      },
+      "test_metrics": {
+        "mae": 0.39943,
+        "rmse": 0.71883,
+        "r2": 0.89809,
+        "n_samples": 3168
+      }
+    },
+    "6h": {
+      "horizon": "6h",
+      "steps_ahead": 24,
+      "target_column": "target_moisture_6h",
+      "baseline_model": "linear_regression",
+      "baseline_validation_metrics": {
+        "mae": 0.57964,
+        "rmse": 0.83476,
+        "r2": 0.70305,
+        "n_samples": 3170
+      },
+      "validation_metrics": {
+        "mae": 0.59613,
+        "rmse": 0.95412,
+        "r2": 0.61206,
+        "n_samples": 3170
+      },
+      "test_metrics": {
+        "mae": 0.97023,
+        "rmse": 1.31632,
+        "r2": 0.64813,
+        "n_samples": 3168
+      }
+    },
+    "12h": {
+      "horizon": "12h",
+      "steps_ahead": 48,
+      "target_column": "target_moisture_12h",
+      "baseline_model": "linear_regression",
+      "baseline_validation_metrics": {
+        "mae": 1.20379,
+        "rmse": 1.46967,
+        "r2": 0.08971,
+        "n_samples": 3170
+      },
+      "validation_metrics": {
+        "mae": 0.67081,
+        "rmse": 1.0406,
+        "r2": 0.54365,
+        "n_samples": 3170
+      },
+      "test_metrics": {
+        "mae": 1.51232,
+        "rmse": 1.95307,
+        "r2": 0.19383,
+        "n_samples": 3168
+      }
+    },
+    "24h": {
+      "horizon": "24h",
+      "steps_ahead": 96,
+      "target_column": "target_moisture_24h",
+      "baseline_model": "linear_regression",
+      "baseline_validation_metrics": {
+        "mae": 2.08692,
+        "rmse": 2.35901,
+        "r2": -1.30447,
+        "n_samples": 3170
+      },
+      "validation_metrics": {
+        "mae": 0.81592,
+        "rmse": 1.1559,
+        "r2": 0.44671,
+        "n_samples": 3170
+      },
+      "test_metrics": {
+        "mae": 2.23447,
+        "rmse": 2.75121,
+        "r2": -0.75704,
+        "n_samples": 3168
+      }
+    }
+  },
+  "status": "trained"
+}

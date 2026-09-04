@@ -1,0 +1,11 @@
+dataset_id,module,dataset_name,publisher,official_source,license,coverage,acquisition_method,priority
+ENV_001,environment,Greenhouse_Shrivan_Iran_Dataset,Mendeley Data,https://data.mendeley.com/datasets/ncrm9p4tc8/2,CC BY 4.0,Actual sensor data; six months; greenhouse environment and control states,MANUAL_OFFICIAL_DOWNLOAD,REQUIRED
+ENV_002,environment,Commercial Tomato Greenhouse Microclimate Dataset,Mendeley Data,https://data.mendeley.com/datasets/tkbkzdt5nr/2,Verify on official page,Commercial greenhouse microclimate and plant measurements,MANUAL_OFFICIAL_DOWNLOAD,REQUIRED
+IRR_001,irrigation,EcoIrrigate,Mendeley Data / official GitHub,https://data.mendeley.com/datasets/8x4v7yy3ds/1,CC BY 4.0,"21,312 records; 22 features; soil moisture and environmental data",GIT_OR_OFFICIAL_DOWNLOAD,REQUIRED
+IRR_002,irrigation,Tomato Automated Irrigation IoT Dataset,Mendeley Data,https://data.mendeley.com/datasets/33cngpcrmx/1,Verify on official page,"IoT environmental, soil and irrigation variables",MANUAL_OFFICIAL_DOWNLOAD,OPTIONAL_CROP_SPECIFIC
+WEA_001,weather,NASA POWER Daily API,NASA POWER,https://power.larc.nasa.gov/docs/services/api/temporal/daily/,Official NASA data policy,Historical meteorological and solar time series,AUTOMATED_API,REQUIRED
+GRW_001,growth_stage,Indian Crop Phenome Database,Indian Biological Data Center,https://ibdc.dbt.gov.in/icpd/,Study-specific,Multi-crop phenotyping studies and development-stage metadata,STUDY_BY_STUDY_OFFICIAL_DOWNLOAD,REQUIRED
+DIS_001,disease,PlantVillage,Official GitHub repository,https://github.com/spMohanty/plantvillage-dataset,Repository terms,"54,306 images; multi-crop disease classification",GIT_CLONE,REQUIRED
+DIS_002,disease,PlantDoc,Official GitHub repository,https://github.com/pratikkayal/PlantDoc-Dataset,CC BY 4.0,Real-world plant disease images,GIT_CLONE,REQUIRED
+DIS_003,disease,PlantSeg,Official repository / Zenodo,https://github.com/tqwei05/PlantSeg,Verify record license,In-the-wild disease images and segmentation labels,MANUAL_OFFICIAL_DOWNLOAD,OPTIONAL_ADVANCED
+DIS_004,disease,17C67DHC,Mendeley Data,https://data.mendeley.com/datasets/jsxkymctg8/1,CC BY 4.0,17 crops; disease and healthy classes,MANUAL_OFFICIAL_DOWNLOAD,OPTIONAL_EXPANSION
